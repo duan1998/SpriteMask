@@ -8,10 +8,12 @@ public class MaskCtrl : MonoBehaviour
 
     public void EnableMaskObj()
     {
-        m_maskObj.SetActive(true);
+        m_maskObj.GetComponent<FollowMouse>().enabled = true;
+        m_maskObj.GetComponent<SpriteRenderer>().enabled = true;
     }
     public void DisableMaskObj()
     {
-        m_maskObj.SetActive(false);
+        m_maskObj.GetComponent<FollowMouse>().enabled = false;
+        m_maskObj.GetComponent<SpriteRenderer>().enabled = false;
     }
 }
