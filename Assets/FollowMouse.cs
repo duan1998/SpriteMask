@@ -10,8 +10,17 @@ public class FollowMouse : MonoBehaviour
     private void OnEnable()
     {
         bFollow = true;
+        isRun = true;
     }
-
+    bool isRun = false;
+    private void OnDrawGizmos()
+    {
+        if (isRun)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawCube(transform.position, GetComponent<SpriteRenderer>().bounds.size);
+        }
+    }
 
     // Update is called once per frame
     void Update()

@@ -13,15 +13,15 @@ public class Box : BeMaskedSprite
         m_box2D = GetComponent<BoxCollider2D>();
     }
 
-    public override void Show()
+    public override void BMask()
     {
-        base.Show();
+        base.BMask();
         m_box2D.enabled = true;
         
     }
-    public override void Hide()
+    public override void NotBMask()
     {
-        base.Hide();
+        base.NotBMask();
         m_box2D.enabled = false;
 
     }
@@ -35,4 +35,8 @@ public class Box : BeMaskedSprite
         }
     }
 
+    public override bool Check()
+    {
+        throw new System.NotImplementedException();
+    }
 }

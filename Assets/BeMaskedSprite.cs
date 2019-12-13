@@ -2,64 +2,58 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BeMaskedSprite: MonoBehaviour
+public abstract class BeMaskedSprite: MonoBehaviour
 {
     public Collider2D m_collider2D;
 
-    private SpriteMask m_spriteMask;
+    protected SpriteRenderer m_spriteMaskRenderer;
 
-    protected bool m_bShow;
-
-    public bool m_isGreen;
+    protected bool m_bMask=false;
 
     protected bool isIntersect;
 
+    private BlockRoot m_root;
+
     private void Start()
     {
-        m_spriteMask = GameManager.Instance.GetComponent<MaskCtrl>().m_maskObj.GetComponent<SpriteMask>();
+        m_spriteMaskRenderer = GameManager.Instance.GetComponent<MaskCtrl>().m_maskObj.GetComponent<SpriteRenderer>();
+        m_root = GetComponentInParent<BlockRoot>();
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        if(Check())
+        if(m_bMask&& !Check())
         {
-            if(m_isGreen)
-            {
-                Hide();
-            }
-            else
-                Show();
+            
+            NotBMask();
         }
-        else
+        if(m_root.isIntersect)
         {
-            if (m_isGreen)
+            if(Check())
             {
-                Show();
+                
+                BMask();
             }
-            else
-                Hide();
         }
 
+
+        
+        
     }
 
-    bool Check()
-    {
-        return isIntersect;
-       // Debug.Log(m_collider2D.bounds.Intersects(m_spriteMask.bounds));
+    public abstract bool Check();
+    
 
-        return m_collider2D.bounds.Intersects(m_spriteMask.bounds);
+
+    public virtual void BMask()
+    {
+        m_bMask = true;
     }
-
-
-    public virtual void Show()
+    public virtual void NotBMask()
     {
-        m_bShow = true;
-    }
-    public virtual void Hide()
-    {
-        m_bShow = false;
+        m_bMask = false;
     }
 
     
