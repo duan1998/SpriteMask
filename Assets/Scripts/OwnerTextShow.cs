@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 [System.Serializable]
 public struct OwnerText
 {
@@ -35,7 +36,6 @@ public class OwnerTextShow : MonoBehaviour
        // wordAudio = GetComponent<AudioSource>();
         if (defaultWordEffect!=null)
         wordAudio.clip = defaultWordEffect;
-        Show();
         _screenEffect = GameObject.Find("Main Camera").GetComponent<ScreenEffect>();
         _shake = GameObject.Find("Main Camera").GetComponent<Shake>();
         _screenEffect.enabled = false;
@@ -57,6 +57,14 @@ public class OwnerTextShow : MonoBehaviour
     {
         StartCoroutine(WaitTextFinish(showText,sceneName));
     }
+    public void Show(List<OwnerText> showText, string sceneName,bool needLight)
+    {
+        StartCoroutine(WaitFirstText(showText, sceneName));
+    }
+    IEnumerator WaitFirstText(List<OwnerText> myText, string sceneName)
+    {
+        yield return StartCoroutine(ShowMyText(myText));
+    }
     IEnumerator WaitTextFinish(List<OwnerText> myText,string sceneName)
     {
         yield return StartCoroutine(ShowMyText(myText));
@@ -68,7 +76,7 @@ public class OwnerTextShow : MonoBehaviour
         yield return new WaitForSeconds(2.0f);
         _shake.enabled = false;
         _screenEffect.enabled = false;
-       // UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
     }
     IEnumerator ShowMyText(List<OwnerText> myText)
     {
