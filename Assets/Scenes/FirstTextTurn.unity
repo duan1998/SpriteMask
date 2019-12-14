@@ -218,28 +218,30 @@ MonoBehaviour:
   wordAudio: {fileID: 1882335227}
   defaultWordEffect: {fileID: 8300000, guid: f4e6ae8c18e410a4fa50d68a894d2576, type: 3}
   playerDialogue: {fileID: 948362276}
+  _screenEffect: {fileID: 0}
+  _shake: {fileID: 0}
   _myText:
   - isAdd: 1
-    text: "\u6211\u597D\u50CF\u9677\u5230\u4E86\u4E00\u4E2A\u6DF1\u4E95\u4E2D"
-    timeOfEachWord: 0.1
-    timeToNextPart: 1
-    numberOfDelete: 0
-    eachWordEffect: {fileID: 0}
-    needEnter: 0
-    needDelete: 1
-    color: 0
-  - isAdd: 1
-    text: "\u4E0D\u77E5\u9053\u5DF2\u7ECF\u8FC7\u4E86\u591A\u4E45\u4E86"
-    timeOfEachWord: 0.1
-    timeToNextPart: 2
+    text: "\u6211\u597D\u50CF..."
+    timeOfEachWord: 0.15
+    timeToNextPart: 1.3
     numberOfDelete: 0
     eachWordEffect: {fileID: 0}
     needEnter: 0
     needDelete: 0
     color: 0
   - isAdd: 1
-    text: "\u2026"
-    timeOfEachWord: 0
+    text: "\u9677\u5230\u4E86\u4E00\u4E2A\u6DF1\u4E95\u4E2D"
+    timeOfEachWord: 0.15
+    timeToNextPart: 1.4
+    numberOfDelete: 0
+    eachWordEffect: {fileID: 0}
+    needEnter: 0
+    needDelete: 1
+    color: 0
+  - isAdd: 1
+    text: "\u4F46\u662F\u5374\u722C\u4E0D\u4E0A\u53BB"
+    timeOfEachWord: 0.15
     timeToNextPart: 2
     numberOfDelete: 0
     eachWordEffect: {fileID: 0}
@@ -247,95 +249,95 @@ MonoBehaviour:
     needDelete: 1
     color: 0
   - isAdd: 1
-    text: "\u6211\u5F88\u6E05\u695A\u6211\u9700\u8981\u5E2E\u52A9"
-    timeOfEachWord: 0.1
-    timeToNextPart: 1
+    text: "\u66F4\u53EF\u6015\u7684\u662F..."
+    timeOfEachWord: 0.15
+    timeToNextPart: 1.3
     numberOfDelete: 0
     eachWordEffect: {fileID: 0}
     needEnter: 0
     needDelete: 1
     color: 0
   - isAdd: 1
-    text: "\u4F46\u662F\u6211\u6CA1\u6CD5\u76F4\u89C6\u4ED6\u4EEC\u7684\u76EE\u5149"
-    timeOfEachWord: 0.1
-    timeToNextPart: 1
+    text: "\u6211\u4F3C\u4E4E\u5BF9\u722C\u4E0A\u53BB\u8FD9\u4EF6\u4E8B\u4E5F\u6BEB\u65E0\u5174\u8DA3"
+    timeOfEachWord: 0.15
+    timeToNextPart: 1.3
     numberOfDelete: 0
     eachWordEffect: {fileID: 0}
     needEnter: 0
     needDelete: 1
     color: 0
   - isAdd: 1
-    text: "\u91CC\u9762\u6709\u592A\u591A\u4E1C\u897F\u4E86\u2026"
-    timeOfEachWord: 0.1
-    timeToNextPart: 1
+    text: "\u4E95\u91CC\u6709\u592A\u591A\u4E1C\u897F\u675F\u7F1A\u7740\u6211"
+    timeOfEachWord: 0.15
+    timeToNextPart: 2
     numberOfDelete: 0
     eachWordEffect: {fileID: 0}
     needEnter: 0
     needDelete: 1
     color: 0
   - isAdd: 1
-    text: "\u6050\u614C"
-    timeOfEachWord: 0.1
+    text: "\u6050\u60E7"
+    timeOfEachWord: 0.15
     timeToNextPart: 1
     numberOfDelete: 0
     eachWordEffect: {fileID: 0}
     needEnter: 0
-    needDelete: 0
+    needDelete: 1
     color: 1
-  - isAdd: 1
-    text: ','
-    timeOfEachWord: 0.1
-    timeToNextPart: 0
-    numberOfDelete: 0
-    eachWordEffect: {fileID: 0}
-    needEnter: 0
-    needDelete: 0
-    color: 0
   - isAdd: 1
     text: "\u731C\u5FCC"
-    timeOfEachWord: 0.1
+    timeOfEachWord: 0.15
     timeToNextPart: 1
     numberOfDelete: 0
     eachWordEffect: {fileID: 0}
     needEnter: 0
-    needDelete: 0
+    needDelete: 1
     color: 1
   - isAdd: 1
-    text: ','
-    timeOfEachWord: 0.1
-    timeToNextPart: 0
+    text: "\u7126\u8651"
+    timeOfEachWord: 0.15
+    timeToNextPart: 1
     numberOfDelete: 0
     eachWordEffect: {fileID: 0}
     needEnter: 0
-    needDelete: 0
-    color: 0
+    needDelete: 1
+    color: 2
   - isAdd: 1
-    text: "\u7126\u8651"
-    timeOfEachWord: 0.1
-    timeToNextPart: 1
+    text: "\u82E6\u90C1"
+    timeOfEachWord: 0.15
+    timeToNextPart: 1.5
+    numberOfDelete: 0
+    eachWordEffect: {fileID: 0}
+    needEnter: 0
+    needDelete: 1
+    color: 2
+  - isAdd: 1
+    text: "\u6211\u7684\u611F\u5B98\u4F3C\u4E4E\u5DF2\u7ECF\u4E0D\u5C5E\u4E8E\u6211\u4E86"
+    timeOfEachWord: 0.15
+    timeToNextPart: 1.3
+    numberOfDelete: 0
+    eachWordEffect: {fileID: 0}
+    needEnter: 0
+    needDelete: 1
+    color: 2
+  - isAdd: 1
+    text: "\u6211\u53EA\u80FD\u5C1D\u8BD5\u7528\u5FC3\u53BB\u7AA5\u63A2\u66FE\u7ECF\u7684\u7F8E\u597D"
+    timeOfEachWord: 0.15
+    timeToNextPart: 1.3
     numberOfDelete: 0
     eachWordEffect: {fileID: 0}
     needEnter: 0
     needDelete: 0
     color: 2
   - isAdd: 1
-    text: ','
-    timeOfEachWord: 0.1
+    text: 
+    timeOfEachWord: 0
     timeToNextPart: 0
     numberOfDelete: 0
     eachWordEffect: {fileID: 0}
     needEnter: 0
-    needDelete: 0
-    color: 0
-  - isAdd: 1
-    text: "\u62C5\u5FE7"
-    timeOfEachWord: 0.1
-    timeToNextPart: 1
-    numberOfDelete: 0
-    eachWordEffect: {fileID: 0}
-    needEnter: 0
     needDelete: 1
-    color: 1
+    color: 2
 --- !u!4 &807668534
 Transform:
   m_ObjectHideFlags: 0
@@ -707,6 +709,8 @@ GameObject:
   - component: {fileID: 1882335225}
   - component: {fileID: 1882335224}
   - component: {fileID: 1882335227}
+  - component: {fileID: 1882335228}
+  - component: {fileID: 1882335229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -875,3 +879,42 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1882335228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882335223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4324f7d3339891b4392e9af9e959cbf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shader: {fileID: 0}
+  intensityChangeRate: 0.007
+  maxIntensity: 1
+  valueChangeDurationIn: 1
+  valueChangeDurationOut: 1
+  targetValue: 2
+  brightnessAmount: 1
+  saturationAmount: 1
+  contrastAmount: 1
+--- !u!114 &1882335229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882335223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b2b2a0c52762dc499e8678d17284915, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeTime: 2
+  fps: 20
+  frameTime: 0.3
+  shakeDelta: 0.015
+  cam: {fileID: 0}
+  isshakeCamera: 0

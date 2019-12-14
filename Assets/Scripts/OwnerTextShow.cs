@@ -20,7 +20,8 @@ public class OwnerTextShow : MonoBehaviour
     public AudioSource wordAudio;
     public AudioClip defaultWordEffect;//默认敲击音效
     public Text playerDialogue;
-
+    public ScreenEffect _screenEffect;
+    public Shake _shake;
     public List<OwnerText> _myText;
 
 
@@ -35,6 +36,10 @@ public class OwnerTextShow : MonoBehaviour
         if (defaultWordEffect!=null)
         wordAudio.clip = defaultWordEffect;
         Show();
+        _screenEffect = GameObject.Find("Main Camera").GetComponent<ScreenEffect>();
+        _shake = GameObject.Find("Main Camera").GetComponent<Shake>();
+        _screenEffect.enabled = false;
+        _shake.enabled = false;
     }
     // Update is called once per frame
     void Update()
@@ -55,7 +60,15 @@ public class OwnerTextShow : MonoBehaviour
     IEnumerator WaitTextFinish(List<OwnerText> myText,string sceneName)
     {
         yield return StartCoroutine(ShowMyText(myText));
-        //UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+
+        _shake.enabled = true;
+        _shake.shakeCamera();
+        _screenEffect.enabled = true;
+        _screenEffect.StartEffect();
+        yield return new WaitForSeconds(2.0f);
+        _shake.enabled = false;
+        _screenEffect.enabled = false;
+       // UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
     }
     IEnumerator ShowMyText(List<OwnerText> myText)
     {
