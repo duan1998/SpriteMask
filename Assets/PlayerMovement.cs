@@ -72,13 +72,24 @@ public class PlayerMovement : MonoBehaviour
         if(collision.gameObject.name == "CheckOut")
         {
             //人物X轴锁死
-            rig = GetComponent<Rigidbody2D>();
-            rig.constraints = RigidbodyConstraints2D.FreezePositionX| RigidbodyConstraints2D.FreezeRotation;
+            LockPosX();
             //镜头移动
             MoveCamera();
             //猫出现
             Cat.SetActive(true);
         }
+    }
+
+    public void LockPosX()
+    {
+        rig = GetComponent<Rigidbody2D>();
+        rig.constraints = RigidbodyConstraints2D.FreezePositionX| RigidbodyConstraints2D.FreezeRotation;
+    }
+
+    public void UnLockPosX()
+    {
+        rig = GetComponent<Rigidbody2D>();
+        rig.constraints -= RigidbodyConstraints2D.FreezePositionX;
     }
 
     private void MoveCamera()

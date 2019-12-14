@@ -17,6 +17,8 @@ public class Chaser : MonoBehaviour
 
     public bool m_isWalk;
     public bool m_isCheck;
+
+    public float m_delayTime;
     // Start is called before the first frame update
   
     
@@ -29,42 +31,46 @@ public class Chaser : MonoBehaviour
         if(m_isCheck)
             Check();
     }
+
+
+    float timer = 0f;
+
     void Check()
     {
         RaycastHit2D hit = Physics2D.BoxCast(m_boxCenter.position, m_boxSize, 0,Vector3.right,0.1f, m_layermask);
         if (hit.collider!=null)
         {
-            if(hit.collider.CompareTag("Player"))
+            m_isWalk = false;
+            if (hit.collider.CompareTag("Player"))
             {
+                Perform();
                 //追上了  重新开始
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
-            else
+            else 
             {
-                m_isWalk = false;
-                
-                //判断是否漏了出来
-                //enmmmm
-                if(m_endPointBlock.IsAllBlockCollider())
+                timer += Time.deltaTime;
+                if (timer >= m_delayTime)
                 {
                     //转身，。回头
-                    m_isCheck = false;
                     transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
                     m_moveSpeed *= -1;
 
                     //留下小球
                     ProducePassLevelProp();
                     m_isWalk = true;
+                    timer = 0;
                 }
                 else
                 {
-                    m_isWalk = false;
-                    m_isCheck = false;
-                    Perform();
-                    //重新来
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                    if (!m_endPointBlock.IsAllBlockCollider())
+                    {
+                        m_isWalk = false;
+                        m_isCheck = false;
+                        Perform();
+                        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                    }
                 }
-                
             }
         }
     }
@@ -95,6 +101,10 @@ public class Chaser : MonoBehaviour
     {
         m_passLevelObj.SetActive(true);
     }
+
+   
+        
+    
     
 
 }
