@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -16,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -33,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
     public void OnLanding()
-     {
+    {
         m_anim.SetBool("IsJumping", false);
     }
 
@@ -41,5 +43,55 @@ public class PlayerMovement : MonoBehaviour
     {
         m_controller.Move(horizontalMove * Time.deltaTime, false, jump);
         jump = false;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Enemy"))
+        {
+            //死亡
+            Dead();
+        }
+        if (collision.CompareTag("win"))
+        {
+            //场景切换
+            ChangeSence();
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "Enemy")
+        {
+            //死亡
+            Dead();
+        }
+    }
+
+    private void ChangeSence()
+    {
+        throw new NotImplementedException();
+    }
+
+    /// <summary>
+    /// 死亡
+    /// </summary>
+    private void Dead()
+    {        
+        //PlayDeadVideo();
+        ReStart();
+    }
+
+    /// <summary>
+    /// 重新开始游戏
+    /// </summary>
+    private void ReStart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    //播放死亡动画
+    private void PlayDeadVideo()
+    {
+        throw new NotImplementedException();
     }
 }
