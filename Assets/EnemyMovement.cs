@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyMovement : MonoBehaviour
 {
@@ -39,7 +40,8 @@ public class EnemyMovement : MonoBehaviour
         RaycastHit2D hit2D= Physics2D.BoxCast(m_obstacleCheck.position, m_boxSize, 0, new Vector2(bTowardsRight, 0),0.05f,m_groundMask);
         if (hit2D.collider!=null)
         {
-            bTowardsRight *=-1;
+            if(!hit2D.collider.isTrigger)
+                bTowardsRight *=-1;
         }
     }
 
@@ -52,4 +54,24 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag ("Enemy") )
+        {
+            ReSart();        
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "Enemy")
+        {
+            ReSart();        
+        }
+    }
+
+    void ReSart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }
