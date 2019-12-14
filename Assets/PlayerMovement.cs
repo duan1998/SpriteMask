@@ -37,12 +37,11 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             jump = true;
-            m_anim.SetBool("IsJumping", true);
         }
     }
     public void OnLanding()
     {
-        m_anim.SetBool("IsJumping", false);
+
     }
 
     private void FixedUpdate()
@@ -65,10 +64,10 @@ public class PlayerMovement : MonoBehaviour
             //场景切换
             ChangeSence();
         }
-        if (collision.CompareTag("Cat"))
-        {
-            Destroy(collision.gameObject);
-        }
+        //if (collision.CompareTag("Cat"))
+        //{
+        //    Destroy(collision.gameObject);
+        //}
         if(collision.gameObject.name == "CheckOut")
         {
             //人物X轴锁死

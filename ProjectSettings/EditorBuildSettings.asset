@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/3.unity
     guid: 000d487f970a3d144818b775fb1174ca
+  - enabled: 1
+    path: Assets/Scenes/FirstTextTurn.unity
+    guid: e3a27a2f4a4d4c146ba5ea2b076deeaa
+  - enabled: 1
+    path: Assets/Scenes/4.unity
+    guid: b346b6118d140f348a13985bd93b25b1
   m_configObjects: {}

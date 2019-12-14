@@ -68,7 +68,7 @@ public class OwnerTextShow : MonoBehaviour
         yield return new WaitForSeconds(2.0f);
         _shake.enabled = false;
         _screenEffect.enabled = false;
-       // UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
     }
     IEnumerator ShowMyText(List<OwnerText> myText)
     {
