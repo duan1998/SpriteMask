@@ -4,7 +4,6 @@ using UnityEngine;
 
 public abstract class BeMaskedSprite: MonoBehaviour
 {
-    public Collider2D m_collider2D;
 
     protected SpriteRenderer m_spriteMaskRenderer;
 
@@ -14,32 +13,34 @@ public abstract class BeMaskedSprite: MonoBehaviour
 
     private BlockRoot m_root;
 
+    [SerializeField]
+    private bool m_hasRoot=true;
+
     private void Start()
     {
         m_spriteMaskRenderer = GameManager.Instance.GetComponent<MaskCtrl>().m_maskObj.GetComponent<SpriteRenderer>();
-        m_root = GetComponentInParent<BlockRoot>();
+        if(m_hasRoot)
+            m_root = GetComponentInParent<BlockRoot>();
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        if(m_bMask&& !Check())
+
+        if (m_bMask && !Check())
         {
-            
+
             NotBMask();
         }
-        if(m_root.isIntersect)
+
+        if (m_hasRoot && m_root.isIntersect|| !m_hasRoot)
         {
-            if(Check())
+            if (Check())
             {
-                
                 BMask();
             }
         }
-
-
-        
         
     }
 
