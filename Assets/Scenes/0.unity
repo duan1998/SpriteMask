@@ -363,7 +363,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 38316674}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f275f535b5514f949ac435a7e97b3c86, type: 3}
   m_Name: 
@@ -743,6 +743,89 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_hasRoot: 0
   m_type: 3
+  _textShow: {fileID: 0}
+  OwnerTextList:
+  - isAdd: 1
+    text: "\u613F\u671B\u5355"
+    timeOfEachWord: 0.1
+    timeToNextPart: 0.5
+    numberOfDelete: 0
+    eachWordEffect: {fileID: 0}
+    needEnter: 1
+    needDelete: 0
+    color: 0
+  - isAdd: 1
+    text: "1\uFF1A\u6F14\u51FA"
+    timeOfEachWord: 0.1
+    timeToNextPart: 0.5
+    numberOfDelete: 0
+    eachWordEffect: {fileID: 0}
+    needEnter: 1
+    needDelete: 0
+    color: 0
+  - isAdd: 1
+    text: "2\uFF1A\u4E0E\u7236\u6BCD\u65C5\u6E38"
+    timeOfEachWord: 0.1
+    timeToNextPart: 0.5
+    numberOfDelete: 0
+    eachWordEffect: {fileID: 0}
+    needEnter: 1
+    needDelete: 0
+    color: 0
+  - isAdd: 1
+    text: "3\uFF1A\u517B\u5C0F\u732B"
+    timeOfEachWord: 0.1
+    timeToNextPart: 0.5
+    numberOfDelete: 0
+    eachWordEffect: {fileID: 0}
+    needEnter: 1
+    needDelete: 0
+    color: 0
+  - isAdd: 1
+    text: 
+    timeOfEachWord: 0
+    timeToNextPart: 0
+    numberOfDelete: 0
+    eachWordEffect: {fileID: 0}
+    needEnter: 1
+    needDelete: 0
+    color: 0
+  - isAdd: 1
+    text: 
+    timeOfEachWord: 0
+    timeToNextPart: 0
+    numberOfDelete: 0
+    eachWordEffect: {fileID: 0}
+    needEnter: 1
+    needDelete: 0
+    color: 0
+  - isAdd: 1
+    text: "\u6211\u5E0C\u671B\u6211\u80FD\u597D\u8D77\u6765\u2026"
+    timeOfEachWord: 0.1
+    timeToNextPart: 0.5
+    numberOfDelete: 0
+    eachWordEffect: {fileID: 0}
+    needEnter: 0
+    needDelete: 0
+    color: 0
+  - isAdd: 0
+    text: 
+    timeOfEachWord: 0
+    timeToNextPart: 0
+    numberOfDelete: 9
+    eachWordEffect: {fileID: 0}
+    needEnter: 0
+    needDelete: 0
+    color: 0
+  - isAdd: 1
+    text: "\u5C3D\u91CF\u60F3\u8D77\u4E00\u5207\u8FD8\u6B63\u5E38\u65F6\u5019\u7684\u6837\u5B50"
+    timeOfEachWord: 0.1
+    timeToNextPart: 0.5
+    numberOfDelete: 0
+    eachWordEffect: {fileID: 0}
+    needEnter: 1
+    needDelete: 0
+    color: 0
 --- !u!1 &491977612
 GameObject:
   m_ObjectHideFlags: 0
@@ -885,6 +968,72 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_hasRoot: 0
   m_type: 1
+  _textShow: {fileID: 0}
+  OwnerTextList:
+  - isAdd: 1
+    text: "\u97F3\u4E50\u662F\u6211\u7684\u4E00\u5207\u2026\u6211\u5F88\u4EAB\u53D7\u7AD9\u5728\u821E\u53F0\u4E0A\u65F6\u5168\u8EAB\u5FC3\u88AB\u8282\u594F\u4E0E\u97F3\u9636\u5145\u6EE1\u7684\u611F\u89C9"
+    timeOfEachWord: 0.2
+    timeToNextPart: 2
+    numberOfDelete: 0
+    eachWordEffect: {fileID: 0}
+    needEnter: 0
+    needDelete: 1
+    color: 0
+  - isAdd: 1
+    text: "\u4F46\u662F\u6BCF\u4E00\u6B21\u7AD9\u5728\u821E\u53F0\u4E0A\u4E5F\u8BA9\u6211\u5F88\u6050\u60E7"
+    timeOfEachWord: 0.2
+    timeToNextPart: 2
+    numberOfDelete: 0
+    eachWordEffect: {fileID: 0}
+    needEnter: 0
+    needDelete: 1
+    color: 0
+  - isAdd: 1
+    text: "\u6211\u7684\u65B0\u6B4C\u80FD\u88AB\u542C\u4F17\u4EEC\u63A5\u53D7\u5417\uFF1F"
+    timeOfEachWord: 0.2
+    timeToNextPart: 2
+    numberOfDelete: 0
+    eachWordEffect: {fileID: 0}
+    needEnter: 0
+    needDelete: 1
+    color: 0
+  - isAdd: 1
+    text: "\u4ED6\u4EEC\u7A83\u7A83\u79C1\u8BED\u662F\u5728\u8BF4\u6211\u7684\u6B4C\u53D8\u4E86\u5417\uFF1F"
+    timeOfEachWord: 0.2
+    timeToNextPart: 2
+    numberOfDelete: 0
+    eachWordEffect: {fileID: 0}
+    needEnter: 0
+    needDelete: 1
+    color: 0
+  - isAdd: 1
+    text: "\u5982\u679C\u6709\u4E00\u5929\u6211\u7684\u624D\u534E\u8017\u5C3D\u4E86\uFF0C"
+    timeOfEachWord: 0.2
+    timeToNextPart: 2
+    numberOfDelete: 0
+    eachWordEffect: {fileID: 0}
+    needEnter: 1
+    needDelete: 0
+    color: 0
+  - isAdd: 1
+    text: "\u6211\u5C31\u771F\u7684\u4F1A\u5B64\u8EAB\u4E00\u4EBA\u4E86\u5417\uFF1F"
+    timeOfEachWord: 0.2
+    timeToNextPart: 2
+    numberOfDelete: 0
+    eachWordEffect: {fileID: 0}
+    needEnter: 0
+    needDelete: 1
+    color: 0
+  - isAdd: 1
+    text: "\u6211\u8FD8\u60F3\u2026\u518D\u8BD5\u8BD5\u7AD9\u4E0A\u4E00\u6B21\u821E\u53F0"
+    timeOfEachWord: 0.2
+    timeToNextPart: 2
+    numberOfDelete: 0
+    eachWordEffect: {fileID: 0}
+    needEnter: 0
+    needDelete: 1
+    color: 0
+  levelName: Level1-1
 --- !u!212 &491977616
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1095,6 +1244,54 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_hasRoot: 0
   m_type: 3
+  _textShow: {fileID: 0}
+  OwnerTextList:
+  - isAdd: 1
+    text: "\u6211\u505A\u68A6\u90FD\u60F3\u517B\u53EA"
+    timeOfEachWord: 0.1
+    timeToNextPart: 0.5
+    numberOfDelete: 0
+    eachWordEffect: {fileID: 0}
+    needEnter: 0
+    needDelete: 0
+    color: 0
+  - isAdd: 1
+    text: "\u732B"
+    timeOfEachWord: 0.1
+    timeToNextPart: 1
+    numberOfDelete: 0
+    eachWordEffect: {fileID: 0}
+    needEnter: 0
+    needDelete: 1
+    color: 2
+  - isAdd: 1
+    text: "\u6709\u4E00\u4E2A\u5C0F\u751F\u547D\u80FD\u966A\u4F34\u4F60\u7684\u8BDD\u4E00\u5B9A\u4F1A\u5BF9\u60C5\u7EEA\u6709\u5F88\u5927\u5E2E\u52A9"
+    timeOfEachWord: 0.1
+    timeToNextPart: 0.5
+    numberOfDelete: 0
+    eachWordEffect: {fileID: 0}
+    needEnter: 0
+    needDelete: 1
+    color: 0
+  - isAdd: 1
+    text: "\u4F46\u662F\u8FD9\u6837\u7684\u6211\u4E5F\u80FD\u5BF9\u4E00\u4E2A\u751F\u547D\u8D1F\u8D23\u5417\uFF1F"
+    timeOfEachWord: 0.1
+    timeToNextPart: 0.5
+    numberOfDelete: 0
+    eachWordEffect: {fileID: 0}
+    needEnter: 0
+    needDelete: 1
+    color: 0
+  - isAdd: 1
+    text: "\u6211\u6CA1\u6709\u8E0F\u51FA\u8FD9\u4E00\u6B65\u7684\u52C7\u6C14"
+    timeOfEachWord: 0.1
+    timeToNextPart: 0.5
+    numberOfDelete: 0
+    eachWordEffect: {fileID: 0}
+    needEnter: 0
+    needDelete: 1
+    color: 0
+  levelName: Level1-2
 --- !u!1 &667210701
 GameObject:
   m_ObjectHideFlags: 0
@@ -1547,6 +1744,54 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_hasRoot: 0
   m_type: 2
+  _textShow: {fileID: 0}
+  OwnerTextList:
+  - isAdd: 1
+    text: "\u6211\u7684\u7236\u6BCD\u662F\u4E16\u754C\u4E0A\u6700\u5584\u826F\u7684\u4EBA"
+    timeOfEachWord: 0.1
+    timeToNextPart: 0.5
+    numberOfDelete: 0
+    eachWordEffect: {fileID: 0}
+    needEnter: 0
+    needDelete: 1
+    color: 0
+  - isAdd: 1
+    text: "\u4ECE\u6765\u4E0D\u4F1A\u903C\u8FEB\u6211\u6700\u4E0D\u559C\u6B22\u7684\u4E8B\uFF0C\u4E5F\u4F1A\u5C0A\u91CD\u6211\u7684\u6BCF\u4E00\u4E2A\u51B3\u5B9A"
+    timeOfEachWord: 0.1
+    timeToNextPart: 0.5
+    numberOfDelete: 0
+    eachWordEffect: {fileID: 0}
+    needEnter: 0
+    needDelete: 1
+    color: 0
+  - isAdd: 1
+    text: "\u6211\u4E00\u76F4\u5E0C\u671B\u80FD\u5E26\u4ED6\u4EEC\u53BB\u770B\u4E00\u6B21\u6781\u5149"
+    timeOfEachWord: 0.1
+    timeToNextPart: 0.5
+    numberOfDelete: 0
+    eachWordEffect: {fileID: 0}
+    needEnter: 0
+    needDelete: 1
+    color: 0
+  - isAdd: 1
+    text: "\u4F46\u662F\u6211\u6CA1\u6CD5\u8FC8\u51FA\u8FD9\u4E00\u6B65\u2026\u6211\u6CA1\u6CD5\u8BA9\u4ED6\u4EEC\u770B\u5230\u6211\u73B0\u5728\u7684\u6837\u5B50\u2026"
+    timeOfEachWord: 0.1
+    timeToNextPart: 0.5
+    numberOfDelete: 0
+    eachWordEffect: {fileID: 0}
+    needEnter: 0
+    needDelete: 1
+    color: 0
+  - isAdd: 1
+    text: "\u6211\u6015\u4ED6\u4EEC\u4F1A\u8D23\u602A\u81EA\u5DF1\u2026"
+    timeOfEachWord: 0.1
+    timeToNextPart: 0.5
+    numberOfDelete: 0
+    eachWordEffect: {fileID: 0}
+    needEnter: 0
+    needDelete: 1
+    color: 0
+  levelName: Level1-3
 --- !u!1 &1216145259
 GameObject:
   m_ObjectHideFlags: 0
@@ -1720,6 +1965,7 @@ RectTransform:
   m_Children:
   - {fileID: 667210705}
   - {fileID: 17765689}
+  - {fileID: 1971604982}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1873,6 +2119,150 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1276788256}
   m_CullTransparentMesh: 0
+--- !u!1 &1752576229
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1752576232}
+  - component: {fileID: 1752576231}
+  - component: {fileID: 1752576230}
+  m_Layer: 0
+  m_Name: OwnerText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1752576230
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752576229}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &1752576231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752576229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 410c8472e7163104294bb9d65d03bec1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wordAudio: {fileID: 1752576230}
+  defaultWordEffect: {fileID: 8300000, guid: f4e6ae8c18e410a4fa50d68a894d2576, type: 3}
+  playerDialogue: {fileID: 1971604980}
+  _myText: []
+--- !u!4 &1752576232
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752576229}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -46.96, y: -1.28, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1849962863
 GameObject:
   m_ObjectHideFlags: 0
@@ -1953,3 +2343,82 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1971604979
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1971604982}
+  - component: {fileID: 1971604981}
+  - component: {fileID: 1971604980}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1971604980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971604979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 50
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 5
+    m_MaxSize: 50
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &1971604981
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971604979}
+  m_CullTransparentMesh: 0
+--- !u!224 &1971604982
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971604979}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1224433379}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0.000015259}
+  m_SizeDelta: {x: 1920, y: 1080}
+  m_Pivot: {x: 0.5, y: 0.5}

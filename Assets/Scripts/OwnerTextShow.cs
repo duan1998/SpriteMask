@@ -43,7 +43,19 @@ public class OwnerTextShow : MonoBehaviour
     public void Show()
     {
         StartCoroutine(ShowMyText(_myText));
-
+    }
+    public void Show(List<OwnerText> showText)
+    {
+        StartCoroutine(ShowMyText(showText));
+    }
+    public void Show(List<OwnerText> showText, string sceneName)
+    {
+        StartCoroutine(WaitTextFinish(showText,sceneName));
+    }
+    IEnumerator WaitTextFinish(List<OwnerText> myText,string sceneName)
+    {
+        yield return StartCoroutine(ShowMyText(myText));
+        //UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
     }
     IEnumerator ShowMyText(List<OwnerText> myText)
     {
