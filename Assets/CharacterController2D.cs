@@ -34,7 +34,7 @@ public class CharacterController2D : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(m_Rigidbody2D.velocity.y<=0)
+       // if(m_Rigidbody2D.velocity.y<=0)
         {
             bool wasGrounded = m_Grounded;
             m_Grounded = false;
