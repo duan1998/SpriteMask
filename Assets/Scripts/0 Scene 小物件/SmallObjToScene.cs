@@ -7,18 +7,21 @@ using UnityEngine;
 
 public class SmallObjToScene : CanMutuObj
 {
-    
 
+    public OwnerTextShow _textShow;
+    public List<OwnerText> OwnerTextList;
+    public string levelName;
     private void OnMouseDown()
     {
+        _textShow = GameObject.Find("OwnerText").GetComponent<OwnerTextShow>();
         BeginLoadGameScene();
-        UnityEngine.SceneManagement.SceneManager.LoadScene(((int)m_type).ToString());
     }
 
 
     public void BeginLoadGameScene()
     {
-
+        _textShow.playerDialogue.text = "";
+        _textShow.Show(OwnerTextList, levelName);
     }
 }
 
