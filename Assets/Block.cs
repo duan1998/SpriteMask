@@ -18,12 +18,10 @@ public class Block : BeMaskedSprite
         if (m_isGreen)
         {
             m_box2D.isTrigger = true;
-            m_renderer.enabled = false;
         }
         else
         {
             m_box2D.isTrigger = false;
-            m_renderer.enabled = true;
         }
 
     }
@@ -33,12 +31,10 @@ public class Block : BeMaskedSprite
         if (m_isGreen)
         {
             m_box2D.isTrigger = false;
-            m_renderer.enabled = true;
         }
         else
         {
             m_box2D.isTrigger = true;
-            m_renderer.enabled = false;
         }
     }
 
