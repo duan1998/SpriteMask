@@ -27,20 +27,28 @@ public abstract class BeMaskedSprite: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (m_bMask && !Check())
+        if(m_spriteMaskRenderer.enabled==false&&m_bMask)
         {
-
             NotBMask();
         }
-
-        if (m_hasRoot && m_root.isIntersect|| !m_hasRoot)
+        else
         {
-            if (Check())
+            if (m_bMask && !Check())
             {
-                BMask();
+
+                NotBMask();
+            }
+
+            if (m_hasRoot && m_root.isIntersect || !m_hasRoot)
+            {
+                if (Check())
+                {
+                    BMask();
+                }
             }
         }
+
+        
         
     }
 
