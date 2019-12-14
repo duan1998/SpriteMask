@@ -9,6 +9,7 @@ public class FollowPlayer : MonoBehaviour
     public float m_smooth;
 
     public bool isFollowX;
+    public bool isFollowY;
 
 
     // Start is called before the first frame update
@@ -22,10 +23,15 @@ public class FollowPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isFollowX)
+        if(isFollowX && isFollowY)
             transform.position=Vector3.Lerp(
                 transform.position,
                 new Vector3(m_player.position.x, m_player.position.y,transform.position.z), 
+                m_smooth);
+        else if(isFollowX)
+            transform.position = Vector3.Lerp(
+                transform.position,
+                new Vector3(m_player.position.x, transform.position.y, transform.position.z),
                 m_smooth);
         else if( m_player.position.y >= transform.position.y )
             transform.position = Vector3.Lerp(
