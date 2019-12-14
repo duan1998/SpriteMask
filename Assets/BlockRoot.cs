@@ -19,7 +19,6 @@ public class BlockRoot : MonoBehaviour
     {
         isIntersect = false;
         m_spriteMaskRenderer = GameManager.Instance.GetComponent<MaskCtrl>().m_maskObj.GetComponent<SpriteRenderer>();
-        Debug.Log(m_spriteMaskRenderer);
         isRun = true;
     }
     bool isRun = false;

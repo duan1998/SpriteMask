@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 public class Block : BeMaskedSprite
 {
-    private BoxCollider2D m_box2D;
+    [HideInInspector]
+    public BoxCollider2D m_box2D;
     private SpriteRenderer m_renderer;
 
     public bool m_isGreen;
