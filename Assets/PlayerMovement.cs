@@ -54,6 +54,8 @@ public class PlayerMovement : MonoBehaviour
         }
         if (collision.CompareTag("win"))
         {
+
+            GlobalMananger.isPassLevel[(SceneManager.GetActiveScene().buildIndex - 1)] = true;
             //场景切换
             ChangeSence();
         }
@@ -70,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void ChangeSence()
     {
-        throw new NotImplementedException();
+        SceneManager.LoadScene(0);
     }
 
     /// <summary>
