@@ -26,8 +26,8 @@ public class BlockRoot : MonoBehaviour
     {
         if(isRun)
         {
-            Gizmos.color = Color.red;
-            Gizmos.DrawCube(transform.position, m_renderer.bounds.size);
+            //Gizmos.color = Color.red;
+            //izmos.DrawCube(transform.position, m_renderer.bounds.size);
         }
     }
 

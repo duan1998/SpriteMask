@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     Camera Main;
     public Transform target;
+    [SerializeField]
+    GameObject Cat;
 
     // Start is called before the first frame update
     void Start()
@@ -71,15 +73,19 @@ public class PlayerMovement : MonoBehaviour
         {
             //人物X轴锁死
             rig = GetComponent<Rigidbody2D>();
-            rig.constraints = RigidbodyConstraints2D.FreezePositionX;
+            rig.constraints = RigidbodyConstraints2D.FreezePositionX| RigidbodyConstraints2D.FreezeRotation;
             //镜头移动
             MoveCamera();
+            //猫出现
+            Cat.SetActive(true);
         }
     }
 
     private void MoveCamera()
     {
+        Main.orthographicSize = 8.4f;
         FollowPlayer CameraController = Main.GetComponent<FollowPlayer>();
+        CameraController.isFollowY = true;
         CameraController.m_player = target;
         CameraController.m_smooth = 0.04f;
     }
@@ -90,6 +96,13 @@ public class PlayerMovement : MonoBehaviour
         {
             //死亡
             Dead();
+        }
+        if (collision.collider.tag == "win")
+        {
+
+            GlobalMananger.isPassLevel[(SceneManager.GetActiveScene().buildIndex - 1)] = true;
+            //场景切换
+            ChangeSence();
         }
     }
 

@@ -18,7 +18,7 @@ public class FollowMouse : MonoBehaviour
         if (isRun)
         {
             Gizmos.color = Color.red;
-            Gizmos.DrawCube(transform.position, GetComponent<SpriteRenderer>().bounds.size);
+            //Gizmos.DrawCube(transform.position, GetComponent<SpriteRenderer>().bounds.size);
         }
     }
 
