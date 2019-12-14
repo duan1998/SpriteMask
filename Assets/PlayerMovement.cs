@@ -14,6 +14,10 @@ public class PlayerMovement : MonoBehaviour
 
     float horizontalMove = 0f;
     bool jump = false;
+    Rigidbody2D rig;
+    [SerializeField]
+    Camera Main;
+    public Transform target;
 
     // Start is called before the first frame update
     void Start()
@@ -57,6 +61,25 @@ public class PlayerMovement : MonoBehaviour
             //场景切换
             ChangeSence();
         }
+        if (collision.CompareTag("Cat"))
+        {
+            Destroy(collision.gameObject);
+        }
+        if(collision.gameObject.name == "CheckOut")
+        {
+            //人物X轴锁死
+            rig = GetComponent<Rigidbody2D>();
+            rig.constraints = RigidbodyConstraints2D.FreezePositionX;
+            //镜头移动
+            MoveCamera();
+        }
+    }
+
+    private void MoveCamera()
+    {
+        FollowPlayer CameraController = Main.GetComponent<FollowPlayer>();
+        CameraController.m_player = target;
+        CameraController.m_smooth = 0.04f;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

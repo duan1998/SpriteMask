@@ -25,7 +25,7 @@ public class FollowPlayer : MonoBehaviour
         if(isFollowX)
             transform.position=Vector3.Lerp(
                 transform.position,
-                new Vector3(m_player.position.x,transform.position.y,transform.position.z), 
+                new Vector3(m_player.position.x, m_player.position.y,transform.position.z), 
                 m_smooth);
         else if( m_player.position.y >= transform.position.y )
             transform.position = Vector3.Lerp(
