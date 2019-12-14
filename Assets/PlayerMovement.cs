@@ -37,12 +37,11 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             jump = true;
-            m_anim.SetBool("IsJumping", true);
         }
     }
     public void OnLanding()
     {
-        m_anim.SetBool("IsJumping", false);
+
     }
 
     private void FixedUpdate()
@@ -65,20 +64,31 @@ public class PlayerMovement : MonoBehaviour
             //场景切换
             ChangeSence();
         }
-        if (collision.CompareTag("Cat"))
-        {
-            Destroy(collision.gameObject);
-        }
+        //if (collision.CompareTag("Cat"))
+        //{
+        //    Destroy(collision.gameObject);
+        //}
         if(collision.gameObject.name == "CheckOut")
         {
             //人物X轴锁死
-            rig = GetComponent<Rigidbody2D>();
-            rig.constraints = RigidbodyConstraints2D.FreezePositionX| RigidbodyConstraints2D.FreezeRotation;
+            LockPosX();
             //镜头移动
             MoveCamera();
             //猫出现
             Cat.SetActive(true);
         }
+    }
+
+    public void LockPosX()
+    {
+        rig = GetComponent<Rigidbody2D>();
+        rig.constraints = RigidbodyConstraints2D.FreezePositionX| RigidbodyConstraints2D.FreezeRotation;
+    }
+
+    public void UnLockPosX()
+    {
+        rig = GetComponent<Rigidbody2D>();
+        rig.constraints -= RigidbodyConstraints2D.FreezePositionX;
     }
 
     private void MoveCamera()

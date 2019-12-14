@@ -7,14 +7,20 @@ using UnityEngine;
 
 public class SmallObjToScene : CanMutuObj
 {
+    public bool isCanClick=true;
 
     public OwnerTextShow _textShow;
     public List<OwnerText> OwnerTextList;
     public string levelName;
     private void OnMouseDown()
     {
-        _textShow = GameObject.Find("OwnerText").GetComponent<OwnerTextShow>();
-        BeginLoadGameScene();
+        if (isCanClick)
+        {
+            isCanClick = false;
+            _textShow = GameObject.Find("OwnerText").GetComponent<OwnerTextShow>();
+            BeginLoadGameScene();
+        }
+        
     }
 
 
