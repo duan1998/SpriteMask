@@ -2,26 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public enum CanClickObjType
 {
-    Guitar,
+    Guitar=1,
     Photo,
-    Catlitter //猫窝
+    Catlitter, //猫窝
 }
-
-public class Guitar : BeMaskedSprite
+public class CanMutuObj : BeMaskedSprite
 {
-
     private SpriteRenderer m_renderer;
-    private BoxCollider2D m_box2D;
+    private PolygonCollider2D m_poly2D;
 
     public CanClickObjType m_type;
 
     private void Awake()
     {
         m_renderer = GetComponent<SpriteRenderer>();
-        m_box2D = GetComponent<BoxCollider2D>();
+        m_poly2D = GetComponent<PolygonCollider2D>();
     }
 
     public override bool Check()
@@ -32,14 +29,14 @@ public class Guitar : BeMaskedSprite
     public override void BMask()
     {
         base.BMask();
-        m_box2D.enabled = true;
+        m_poly2D.enabled = true;
 
 
     }
     public override void NotBMask()
     {
         base.NotBMask();
-        m_box2D.enabled = false;
+        m_poly2D.enabled = false;
     }
 
     bool Intersects()
@@ -53,16 +50,5 @@ public class Guitar : BeMaskedSprite
         if (Mathf.Abs(rect1Pos.x - rect2Pos.x) < (rect1Size.x + rect2Size.x) / 2 && Mathf.Abs(rect1Pos.y - rect2Pos.y) < (rect1Size.y + rect2Size.y) / 2)
             return true;
         else return false;
-    }
-    private void OnMouseDown()
-    {
-        BeginLoadGameScene();
-        UnityEngine.SceneManagement.SceneManager.LoadScene("1");
-    }
-
-
-    public void BeginLoadGameScene()
-    {
-
     }
 }

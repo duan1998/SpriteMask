@@ -7,7 +7,10 @@ TagManager:
   - Enemy
   - Obstacle
   - Mask
+<<<<<<< HEAD
   - win
+=======
+>>>>>>> 3c541c2f4e3baf83e97ac3ec41b95166553170aa
   layers:
   - Default
   - TransparentFX
@@ -20,7 +23,7 @@ TagManager:
   - PostProcessing
   - Ground
   - EnemyCollider
-  - 
+  - Level1BossTrigger
   - 
   - 
   - 
