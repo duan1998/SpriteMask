@@ -61,8 +61,9 @@ public class PlayerMovement : MonoBehaviour
         {
 
             GlobalMananger.isPassLevel[(SceneManager.GetActiveScene().buildIndex - 1)] = true;
+            StartCoroutine(WaitMove());
             //场景切换
-            ChangeSence();
+            //ChangeSence();
         }
         //if (collision.CompareTag("Cat"))
         //{
@@ -111,14 +112,22 @@ public class PlayerMovement : MonoBehaviour
         {
 
             GlobalMananger.isPassLevel[(SceneManager.GetActiveScene().buildIndex - 1)] = true;
+            StartCoroutine(WaitMove());
+            //GameObject.Find("SceneIn").GetComponent<OwnerTextShow>().FromPoint();
             //场景切换
-            ChangeSence();
+
+            //ChangeSence();
         }
     }
-
+    IEnumerator WaitMove()
+    {
+        GameObject.Find("SceneIn").GetComponent<OwnerTextShow>().FromPoint();
+        yield return new WaitForSeconds(2.0f);
+        ChangeSence();
+    }
     private void ChangeSence()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(4);
     }
 
     /// <summary>

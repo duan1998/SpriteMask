@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class StartOwnerText : MonoBehaviour
 {
+    public string sceneName;
     public OwnerTextShow _ownerText;
     // Start is called before the first frame update
     void Start()
     {
-        _ownerText.Show(_ownerText._myText, "0");
+        _ownerText.Show(_ownerText._myText, sceneName, false);
         Debug.Log("Success Income");
     }
 

@@ -24,7 +24,7 @@ public class OwnerTextShow : MonoBehaviour
     public ScreenEffect _screenEffect;
     public Shake _shake;
     public List<OwnerText> _myText;
-
+    public ShaderChange _shaderChange;
 
     // Start is called before the first frame update
     void Start()
@@ -38,8 +38,10 @@ public class OwnerTextShow : MonoBehaviour
         wordAudio.clip = defaultWordEffect;
         _screenEffect = GameObject.Find("Main Camera").GetComponent<ScreenEffect>();
         _shake = GameObject.Find("Main Camera").GetComponent<Shake>();
+        _shaderChange = GameObject.Find("WhiteImage").GetComponent<ShaderChange>();
         _screenEffect.enabled = false;
         _shake.enabled = false;
+        //_shaderChange = GameObject.Find("WhiteImage").GetComponent<ShaderChange>();
     }
     // Update is called once per frame
     void Update()
@@ -53,19 +55,52 @@ public class OwnerTextShow : MonoBehaviour
     {
         StartCoroutine(ShowMyText(showText));
     }
-    public void Show(List<OwnerText> showText, string sceneName)
+    public void Show(List<OwnerText> showText, string sceneName,int musicNumber)
     {
-        StartCoroutine(WaitTextFinish(showText,sceneName));
+        StartCoroutine(WaitTextFinish(showText,sceneName,musicNumber));
     }
     public void Show(List<OwnerText> showText, string sceneName,bool needLight)
     {
         StartCoroutine(WaitFirstText(showText, sceneName));
     }
+    public void ToPoint()
+    {
+        _shaderChange._threShold = 0.3f;
+        _shaderChange._edgeLength = 0f;
+        StartCoroutine(ToPointIenum());
+    }
+    public void FromPoint()
+    {
+        _shaderChange._threShold = 1f;
+        _shaderChange._edgeLength = 1f;
+        StartCoroutine(FromPointIenum());
+    }
     IEnumerator WaitFirstText(List<OwnerText> myText, string sceneName)
     {
         yield return StartCoroutine(ShowMyText(myText));
+        _shaderChange._threShold = 1;
+        _shaderChange._edgeLength = 1;
+        DOTween.To(() => _shaderChange._threShold, x => _shaderChange._threShold = x, 0.3f, 0.5f);
+        yield return new WaitForSeconds(0.5f);
+        DOTween.To(() => _shaderChange._edgeLength, x => _shaderChange._edgeLength = x, 0f, 1.5f);
+        yield return new WaitForSeconds(1.5f);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
     }
-    IEnumerator WaitTextFinish(List<OwnerText> myText,string sceneName)
+    IEnumerator FromPointIenum()
+    {
+        DOTween.To(() => _shaderChange._threShold, x => _shaderChange._threShold = x, 0.3f, 0.5f);
+        yield return new WaitForSeconds(0.5f);
+        DOTween.To(() => _shaderChange._edgeLength, x => _shaderChange._edgeLength = x, 0f, 1.5f);
+        yield return new WaitForSeconds(1.5f);
+    }
+    IEnumerator ToPointIenum()
+    {
+        DOTween.To(() => _shaderChange._edgeLength, x => _shaderChange._edgeLength = x, 1f, 1.5f);
+        yield return new WaitForSeconds(1.5f);
+        DOTween.To(() => _shaderChange._threShold, x => _shaderChange._threShold = x, 1f, 0.5f);
+        yield return new WaitForSeconds(0.5f);
+    }
+    IEnumerator WaitTextFinish(List<OwnerText> myText,string sceneName,int musicNumber)
     {
         yield return StartCoroutine(ShowMyText(myText));
 
@@ -73,9 +108,14 @@ public class OwnerTextShow : MonoBehaviour
         _shake.shakeCamera();
         _screenEffect.enabled = true;
         _screenEffect.StartEffect();
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(1.5f);
+
         _shake.enabled = false;
         _screenEffect.enabled = false;
+
+        yield return StartCoroutine(FromPointIenum());
+        BGMController.Instance._audioSource.clip = BGMController.Instance._backMusic[musicNumber];
+        BGMController.Instance._audioSource.Play();
         UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
     }
     IEnumerator ShowMyText(List<OwnerText> myText)

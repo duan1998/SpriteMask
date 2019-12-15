@@ -15,7 +15,7 @@ Shader "Kaima/Dissolve/ToPoint"
 	}
 	SubShader
 	{
-		Tags { "Queue"="Geometry" "RenderType"="Opaque" }
+		Tags { "Queue"="Transparent" "RenderType"="Opaque" }
 
 		Pass
 		{

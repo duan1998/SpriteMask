@@ -5,12 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: d1c3109bdb54ad54c8a2b2838528e640
   - enabled: 1
-    path: Assets/Scenes/0.unity
-    guid: 3dc54aa2a34eeb544be2f91145a96917
+    path: Assets/Scenes/4.unity
+    guid: 402a0b6157372c842925b534a04ca59e
   - enabled: 1
     path: Assets/Scenes/1.unity
     guid: fbd00c9ffd2de424794d7fa20da70f9b
@@ -21,6 +18,15 @@ EditorBuildSettings:
     path: Assets/Scenes/3.unity
     guid: 000d487f970a3d144818b775fb1174ca
   - enabled: 1
+    path: Assets/Scenes/0.unity
+    guid: 3dc54aa2a34eeb544be2f91145a96917
+  - enabled: 1
     path: Assets/Scenes/FirstTextTurn.unity
     guid: e3a27a2f4a4d4c146ba5ea2b076deeaa
+  - enabled: 1
+    path: Assets/Scenes/EndTextTurn.unity
+    guid: eed4c06752dbfa54c9407475ce7ace33
+  - enabled: 1
+    path: Assets/Scenes/Ending.unity
+    guid: 0f6d131c9c539b24fa1acaeb823dd718
   m_configObjects: {}

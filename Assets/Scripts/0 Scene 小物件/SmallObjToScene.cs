@@ -12,6 +12,7 @@ public class SmallObjToScene : CanMutuObj
     public OwnerTextShow _textShow;
     public List<OwnerText> OwnerTextList;
     public string levelName;
+    public int music;
     private void OnMouseDown()
     {
         if (isCanClick)
@@ -26,8 +27,10 @@ public class SmallObjToScene : CanMutuObj
 
     public void BeginLoadGameScene()
     {
+
         _textShow.playerDialogue.text = "";
-        _textShow.Show(OwnerTextList, levelName);
+        _textShow.Show(OwnerTextList, levelName,music);
+
     }
 }
 
