@@ -30,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Tab)) LevelPass();
         horizontalMove = Input.GetAxis("Horizontal") * m_moveSpeed;
 
         m_anim.SetFloat("Speed", Mathf.Abs(horizontalMove));
@@ -110,14 +111,18 @@ public class PlayerMovement : MonoBehaviour
         }
         if (collision.collider.tag == "win")
         {
+            LevelPass();
 
-            GlobalMananger.isPassLevel[(SceneManager.GetActiveScene().buildIndex - 1)] = true;
-            StartCoroutine(WaitMove());
             //GameObject.Find("SceneIn").GetComponent<OwnerTextShow>().FromPoint();
             //场景切换
 
             //ChangeSence();
         }
+    }
+    public void LevelPass()
+    {
+        GlobalMananger.isPassLevel[(SceneManager.GetActiveScene().buildIndex - 1)] = true;
+        StartCoroutine(WaitMove());
     }
     IEnumerator WaitMove()
     {

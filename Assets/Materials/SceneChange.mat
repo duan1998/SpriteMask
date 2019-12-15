@@ -69,7 +69,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DistanceEffect: 0.5
     - _DstBlend: 0
-    - _EdgeLength: 0.000008761883
+    - _EdgeLength: 0.000027656555
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
