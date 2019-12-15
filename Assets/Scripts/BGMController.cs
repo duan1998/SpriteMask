@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class BGMController : MonoBehaviour
 {
+
     private static BGMController _instance;
     public static BGMController Instance { get { return _instance; } }
     public AudioSource _audioSource;
     public List<AudioClip> _backMusic;
+    public bool isShow = false;
     // Start is called before the first frame update
     void Start()
     {

@@ -102,6 +102,7 @@ public class OwnerTextShow : MonoBehaviour
     }
     IEnumerator WaitTextFinish(List<OwnerText> myText,string sceneName,int musicNumber)
     {
+        BGMController.Instance.isShow = true;
         yield return StartCoroutine(ShowMyText(myText));
 
         _shake.enabled = true;
@@ -116,10 +117,12 @@ public class OwnerTextShow : MonoBehaviour
         yield return StartCoroutine(FromPointIenum());
         BGMController.Instance._audioSource.clip = BGMController.Instance._backMusic[musicNumber];
         BGMController.Instance._audioSource.Play();
+        BGMController.Instance.isShow = false;
         UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
     }
     IEnumerator ShowMyText(List<OwnerText> myText)
     {
+        BGMController.Instance.isShow = true;
         for (int i = 0; i < myText.Count; i++)
         {
             if (myText[i].eachWordEffect != null) wordAudio.clip = myText[i].eachWordEffect;
@@ -192,5 +195,6 @@ public class OwnerTextShow : MonoBehaviour
             if (myText[i].needDelete) playerDialogue.text = "";
         }
         //此处添加文本到layout中并清除text文本;
+        BGMController.Instance.isShow = false;
     }
 }

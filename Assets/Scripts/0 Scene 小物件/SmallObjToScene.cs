@@ -15,6 +15,7 @@ public class SmallObjToScene : CanMutuObj
     public int music;
     private void OnMouseDown()
     {
+        if (!BGMController.Instance.isShow)
         if (isCanClick)
         {
             isCanClick = false;
