@@ -157,8 +157,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0.000022888, y: 133}
-  m_SizeDelta: {x: 341.9, y: 125.8}
+  m_AnchoredPosition: {x: 0.000022888, y: 57}
+  m_SizeDelta: {x: 321.2, y: 118.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &60491159
 MonoBehaviour:
@@ -486,8 +486,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 174.5}
-  m_SizeDelta: {x: 571.6, y: 669.7}
+  m_AnchoredPosition: {x: 0, y: 40}
+  m_SizeDelta: {x: 695.7, y: 815.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1161524023
 MonoBehaviour:
@@ -503,7 +503,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -575,12 +575,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.518
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -728,7 +728,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 23}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1385551988
@@ -901,6 +901,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: fc91c9e5d98a91343bac7f41224e9e48, type: 3}
   - {fileID: 8300000, guid: 76d107d2726b9a146ab1172307c5a386, type: 3}
   - {fileID: 8300000, guid: 8dee78ebbf11b37458dbc71d993728dd, type: 3}
+  isShow: 0
 --- !u!4 &1522313154
 Transform:
   m_ObjectHideFlags: 0

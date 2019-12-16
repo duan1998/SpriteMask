@@ -11,7 +11,7 @@ public class EndingTextChange : MonoBehaviour
     {
         //BGMController.Instance._audioSource.clip = BGM;
         //BGMController.Instance._audioSource.Play();
-        transform.DOMove(new Vector3(960f, 2200f, 0), 23);
+        transform.DOLocalMoveY(-627f, 23);
         StartCoroutine(Finish());
     }
     IEnumerator Finish()
