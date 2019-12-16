@@ -755,7 +755,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -2543}
+  m_AnchoredPosition: {x: 0, y: -2563}
   m_SizeDelta: {x: -0.000061035, y: 4610}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1349988700
@@ -792,7 +792,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "\u5F00\u53D1\u4EBA\u5458\u8868\uFF1A\n\n\n\n\n\n\n\n\u7B56\u5212:\u81EA\u7531\n\n\n\n\n\n\n\u7F8E\u672F:\u739B\u4E3D\u5965\n\n\n\n\n\n\n\u7A0B\u5E8F:\u8001\u6BB5\n\n\n\n\n\n\n\u7A0B\u5E8F:Ray\n\n\n\n\n\n\n\u7A0B\u5E8F:\u6728\u5B50\u4E5D\n\n\n\n\n\u7279\u522B\u9E23\u8C22:\u84DD\u72D7\u513F\n\n\n\n
-    \                      \n\n\n\n\n                        In memory of Chester
+    \                      \n\n\n\n\n                               In memory of Chester
     Bennington\n\n\n"
 --- !u!222 &1349988701
 CanvasRenderer:
