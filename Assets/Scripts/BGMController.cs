@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BGMController : MonoBehaviour
 {
-
+    public bool isSceneChange = false;
     private static BGMController _instance;
     public static BGMController Instance { get { return _instance; } }
     public AudioSource _audioSource;
@@ -19,8 +19,6 @@ public class BGMController : MonoBehaviour
     {
         if (_instance == null)
         {
-
-            Screen.SetResolution(1960, 1080, false);
             _instance = this;
             DontDestroyOnLoad(gameObject);
             _audioSource = this.GetComponent<AudioSource>();

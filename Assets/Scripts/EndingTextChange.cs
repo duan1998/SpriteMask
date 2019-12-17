@@ -9,8 +9,8 @@ public class EndingTextChange : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        BGMController.Instance._audioSource.clip = BGM;
-        BGMController.Instance._audioSource.Play();
+        //BGMController.Instance._audioSource.clip = BGM;
+        //BGMController.Instance._audioSource.Play();
         transform.DOLocalMoveY(-658f, 23);
         StartCoroutine(Finish());
     }

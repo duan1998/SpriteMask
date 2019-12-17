@@ -1,13 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class ToPointSceneChange : MonoBehaviour
+
+public class MakeInteractFalse : MonoBehaviour
 {
-    public OwnerTextShow _OwnerTextShow;
+    public GameObject[] smallObj;
     // Start is called before the first frame update
     void Start()
     {
-        _OwnerTextShow.ToPoint();
+        for (int i = 0; i < GlobalMananger.isPassLevel.Length; i++)
+        {
+            if (GlobalMananger.isPassLevel[i]) smallObj[i].SetActive(false);
+        }
     }
 
     // Update is called once per frame

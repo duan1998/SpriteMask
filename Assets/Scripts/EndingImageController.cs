@@ -19,17 +19,17 @@ public class EndingImageController : MonoBehaviour
     IEnumerator ImageShow()
     {
         _imageList[0].DOFade(1, 5f);
-        yield return new WaitForSeconds(4);
-        _imageList[0].DOFade(0,3f);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(5);
+        _imageList[0].DOFade(0,2f);
+        yield return new WaitForSeconds(2);
         _imageList[1].DOFade(1, 5f);
-        yield return new WaitForSeconds(4);
-        _imageList[1].DOFade(0, 3f);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(5);
+        _imageList[1].DOFade(0, 2f);
+        yield return new WaitForSeconds(2);
         _imageList[2].DOFade(1, 5f);
-        yield return new WaitForSeconds(4);
-        _imageList[2].DOFade(0, 3f);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(5);
+        _imageList[2].DOFade(0, 2f);
+        yield return new WaitForSeconds(2);
         _imageList[3].DOFade(1, 5f);
     }
     // Update is called once per frame

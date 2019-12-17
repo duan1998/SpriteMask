@@ -60,9 +60,8 @@ public class PlayerMovement : MonoBehaviour
         }
         if (collision.CompareTag("win"))
         {
-
-            GlobalMananger.isPassLevel[(SceneManager.GetActiveScene().buildIndex - 1)] = true;
-            StartCoroutine(WaitMove());
+            LevelPass();
+            //StartCoroutine(WaitMove());
             //场景切换
             //ChangeSence();
         }
@@ -80,7 +79,6 @@ public class PlayerMovement : MonoBehaviour
             Cat.SetActive(true);
         }
     }
-
     public void LockPosX()
     {
         rig = GetComponent<Rigidbody2D>();
@@ -122,17 +120,9 @@ public class PlayerMovement : MonoBehaviour
     public void LevelPass()
     {
         GlobalMananger.isPassLevel[(SceneManager.GetActiveScene().buildIndex - 1)] = true;
-        StartCoroutine(WaitMove());
-    }
-    IEnumerator WaitMove()
-    {
-        GameObject.Find("SceneIn").GetComponent<OwnerTextShow>().FromPoint();
-        yield return new WaitForSeconds(2.0f);
-        ChangeSence();
-    }
-    private void ChangeSence()
-    {
-        SceneManager.LoadScene(4);
+        GlobalMananger.needAppear = SceneManager.GetActiveScene().buildIndex - 1;
+        Debug.Log("GlobalMananger.needAppear=" + GlobalMananger.needAppear);
+        GameObject.Find("SceneIn").GetComponent<OwnerTextShow>().FromPoint("0");
     }
 
     /// <summary>

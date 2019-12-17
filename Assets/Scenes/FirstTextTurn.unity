@@ -408,7 +408,7 @@ PrefabInstance:
     - target: {fileID: 4428864422908527285, guid: 0e4039f2ab293b1499c9e38f92391616,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4428864422908527285, guid: 0e4039f2ab293b1499c9e38f92391616,
         type: 3}
@@ -501,8 +501,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c93684198c8c0aa49bb7396c23fa22a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _threShold: 0
-  _edgeLength: 0
+  _threShold: 1
+  _edgeLength: 1
   _canvas: {fileID: 0}
 --- !u!1 &948362274
 GameObject:
@@ -534,7 +534,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1729644920}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -749,8 +749,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1376448196}
-  - {fileID: 868955484}
   - {fileID: 948362275}
+  - {fileID: 868955484}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

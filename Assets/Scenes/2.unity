@@ -17316,7 +17316,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 1409357654}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -20079,6 +20079,57 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 671faab568e12ab459cf22a438986b50, type: 3}
+--- !u!1 &1409357651 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6249523864774347403, guid: 671faab568e12ab459cf22a438986b50,
+    type: 3}
+  m_PrefabInstance: {fileID: 1409357650}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1409357652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409357651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b2b2a0c52762dc499e8678d17284915, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeTime: 2
+  fps: 20
+  frameTime: 0.3
+  shakeDelta: 0.015
+  cam: {fileID: 0}
+  isshakeCamera: 0
+--- !u!114 &1409357653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409357651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4324f7d3339891b4392e9af9e959cbf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shader: {fileID: 0}
+  intensityChangeRate: 0.007
+  maxIntensity: 1
+  valueChangeDurationIn: 1
+  valueChangeDurationOut: 1
+  targetValue: 2
+  brightnessAmount: 1
+  saturationAmount: 1
+  contrastAmount: 1
+--- !u!20 &1409357654 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 6249523864774347413, guid: 671faab568e12ab459cf22a438986b50,
+    type: 3}
+  m_PrefabInstance: {fileID: 1409357650}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1416833600 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1806332221604285517, guid: 2f4d06c59c6f1384fbcfaf9379f4046c,
@@ -28353,10 +28404,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.10276711, y: 0.07707214}
+  m_Offset: {x: 0.014337063, y: 0.057556152}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -28367,7 +28418,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.573345, y: 2.0358047}
+  m_Size: {x: 1.3391366, y: 1.684494}
   m_EdgeRadius: 0
 --- !u!212 &2011198699
 SpriteRenderer:

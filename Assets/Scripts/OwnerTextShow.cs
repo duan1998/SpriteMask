@@ -69,36 +69,53 @@ public class OwnerTextShow : MonoBehaviour
         _shaderChange._edgeLength = 0f;
         StartCoroutine(ToPointIenum());
     }
-    public void FromPoint()
+    public void FromPoint(string sceneName)
     {
         _shaderChange._threShold = 1f;
         _shaderChange._edgeLength = 1f;
-        StartCoroutine(FromPointIenum());
+        StartCoroutine(FromPointIenum(sceneName));
     }
     IEnumerator WaitFirstText(List<OwnerText> myText, string sceneName)
     {
         yield return StartCoroutine(ShowMyText(myText));
-        _shaderChange._threShold = 1;
-        _shaderChange._edgeLength = 1;
-        DOTween.To(() => _shaderChange._threShold, x => _shaderChange._threShold = x, 0.3f, 0.5f);
-        yield return new WaitForSeconds(0.5f);
-        DOTween.To(() => _shaderChange._edgeLength, x => _shaderChange._edgeLength = x, 0f, 1.5f);
-        yield return new WaitForSeconds(1.5f);
-        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+        FromPoint(sceneName);
+        
     }
-    IEnumerator FromPointIenum()
+    IEnumerator FromPointIenum(string sceneName)
     {
-        DOTween.To(() => _shaderChange._threShold, x => _shaderChange._threShold = x, 0.3f, 0.5f);
-        yield return new WaitForSeconds(0.5f);
-        DOTween.To(() => _shaderChange._edgeLength, x => _shaderChange._edgeLength = x, 0f, 1.5f);
-        yield return new WaitForSeconds(1.5f);
+        Debug.Log("FromPointIenum");
+        Time.timeScale = 0f;
+        DOTween.To(() => _shaderChange._threShold, x => _shaderChange._threShold = x, 0.3f, 0.7f)
+            .SetUpdate(true).OnComplete(()=> {
+                Debug.Log("InFirst");
+                DOTween.To(() => _shaderChange._edgeLength, x => _shaderChange._edgeLength = x, 0f, 1.2f)
+                .SetUpdate(true).OnComplete(()=> {
+                    Time.timeScale = 1f;
+                    UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+                });
+            });
+        yield return null;
+    }
+    public void BackTime()
+    {
+        Time.timeScale = 1f;
     }
     IEnumerator ToPointIenum()
     {
-        DOTween.To(() => _shaderChange._edgeLength, x => _shaderChange._edgeLength = x, 1f, 1.5f);
-        yield return new WaitForSeconds(1.5f);
-        DOTween.To(() => _shaderChange._threShold, x => _shaderChange._threShold = x, 1f, 0.5f);
-        yield return new WaitForSeconds(0.5f);
+        Debug.Log("ToPointIenum");
+        Time.timeScale = 0f;
+        DOTween.To(() => _shaderChange._edgeLength, x => _shaderChange._edgeLength = x, 1f, 1.2f)
+            .SetUpdate(true).
+            OnComplete(()=> {
+                DOTween.To(() => _shaderChange._threShold, x => _shaderChange._threShold = x, 1f, 0.7f)
+                .SetUpdate(true).OnComplete(()=> { Time.timeScale = 1; });
+            });
+        yield return null;
+    }
+    public void ABC()
+    {
+        Debug.Log("ABC success");
+
     }
     IEnumerator WaitTextFinish(List<OwnerText> myText,string sceneName,int musicNumber)
     {
@@ -113,12 +130,11 @@ public class OwnerTextShow : MonoBehaviour
 
         _shake.enabled = false;
         _screenEffect.enabled = false;
-
-        yield return StartCoroutine(FromPointIenum());
         BGMController.Instance._audioSource.clip = BGMController.Instance._backMusic[musicNumber];
         BGMController.Instance._audioSource.Play();
         BGMController.Instance.isShow = false;
-        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+        yield return StartCoroutine(FromPointIenum(sceneName));
+
     }
     IEnumerator ShowMyText(List<OwnerText> myText)
     {
