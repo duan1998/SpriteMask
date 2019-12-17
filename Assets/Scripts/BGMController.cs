@@ -19,6 +19,7 @@ public class BGMController : MonoBehaviour
     {
         if (_instance == null)
         {
+            Application.targetFrameRate = 100;
             _instance = this;
             DontDestroyOnLoad(gameObject);
             _audioSource = this.GetComponent<AudioSource>();
